@@ -55,7 +55,7 @@ const StatusBar = () => {
   
   // Render the section when there is an upcoming meeting
   return (
-    <section className="flex flex-col gap-3 sm:gap-5 text-black items-center md:items-start px-4 sm:px-0">
+    <section className="flex flex-col gap-3 sm:gap-5 text-black items-center md:items-start px- sm:px-0">
       {/* Display the upcoming meeting time */}
       <h2 className="bg-blue-100 max-w-[273px] rounded-2xl p-3 sm:p-4 text-center text-sm sm:text-base font-light">
         Réunion à Venir à :

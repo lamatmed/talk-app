@@ -3,7 +3,7 @@ import StatusBar from "@/components/StatusBar";
 
 const HomePage = () => {
   return (
-    <section >
+    <section className="flex size-full flex-col gap-6 sm:gap-1 text-white animate-fade-in px-4 sm:px-2">
       <StatusBar />
       <MainMenu />
     </section>

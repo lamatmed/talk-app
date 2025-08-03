@@ -44,9 +44,9 @@ const StatusBar = () => {
           {/* Display home image */}
           <Image 
             src='/assets/home-image.svg' 
-            width={400} 
-            height={400} 
-            className="max-md:w-[250px] max-md:h-[250px] -ml-8 sm:-ml-16"
+            width={300} 
+            height={300} 
+        
             alt="image d'accueil" 
           />
       </section>
