@@ -6,7 +6,7 @@ import PWAInstallPrompt from "@/components/PWAInstallPrompt"
 import PWAUpdatePrompt from "@/components/PWAUpdatePrompt"
 import OfflineIndicator from "@/components/OfflineIndicator"
 
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 
 import "./globals.css";
@@ -77,12 +77,13 @@ export const metadata: Metadata = {
     statusBarStyle: 'default',
     title: "Let's Talk",
   },
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 1,
-    userScalable: false,
-  },
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
   themeColor: '#3b82f6',
 };
 
