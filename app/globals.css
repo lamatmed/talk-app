@@ -188,6 +188,241 @@ body {
   @apply p-2 sm:p-3;
 }
 
+/* Mobile video call improvements */
+.str-video__participant-view {
+  @apply rounded-lg overflow-hidden;
+}
+
+.str-video__participant-view--speaker {
+  @apply w-full h-full;
+}
+
+.str-video__participant-view--grid {
+  @apply w-full h-full;
+}
+
+.str-video__participant-view--spotlight {
+  @apply w-full h-full;
+}
+
+/* Mobile controls improvements */
+.str-video__call-controls {
+  @apply flex items-center justify-center gap-1 sm:gap-2 lg:gap-5 p-2 sm:p-4;
+}
+
+.str-video__call-controls__button {
+  @apply rounded-full p-2 sm:p-3 min-w-[40px] sm:min-w-[48px] h-[40px] sm:h-[48px];
+}
+
+/* Mobile video preview improvements */
+.str-video__video-preview {
+  @apply w-full max-w-md mx-auto;
+}
+
+.str-video__video-preview__video {
+  @apply rounded-lg overflow-hidden;
+}
+
+/* Mobile device settings improvements */
+.str-video__device-settings {
+  @apply max-w-[90vw] sm:max-w-md;
+}
+
+.str-video__device-settings__content {
+  @apply p-4 sm:p-6;
+}
+
+.str-video__device-settings__button {
+  @apply w-full sm:w-auto;
+}
+
+/* Video layout improvements */
+.str-video__speaker-layout {
+  @apply w-full h-full;
+}
+
+.str-video__speaker-layout__participant-bar {
+  @apply w-full h-full;
+}
+
+.str-video__speaker-layout__participant-bar--left {
+  @apply w-full h-full;
+}
+
+.str-video__speaker-layout__participant-bar--right {
+  @apply w-full h-full;
+}
+
+.str-video__speaker-layout__participant-bar--bottom {
+  @apply w-full h-full;
+}
+
+.str-video__speaker-layout__participant-bar--top {
+  @apply w-full h-full;
+}
+
+/* Grid layout improvements */
+.str-video__grid-layout {
+  @apply w-full h-full;
+}
+
+.str-video__grid-layout__participant {
+  @apply w-full h-full;
+}
+
+.str-video__grid-layout__participant--local {
+  @apply w-full h-full;
+}
+
+.str-video__grid-layout__participant--remote {
+  @apply w-full h-full;
+}
+
+/* Paginated grid layout improvements */
+.str-video__paginated-grid-layout {
+  @apply w-full h-full;
+}
+
+.str-video__paginated-grid-layout__page {
+  @apply w-full h-full;
+}
+
+.str-video__paginated-grid-layout__participant {
+  @apply w-full h-full;
+}
+
+.str-video__paginated-grid-layout__participant--local {
+  @apply w-full h-full;
+}
+
+.str-video__paginated-grid-layout__participant--remote {
+  @apply w-full h-full;
+}
+
+/* Video element improvements */
+.str-video__participant-view__video {
+  @apply w-full h-full object-cover;
+}
+
+.str-video__participant-view__video--local {
+  @apply w-full h-full object-cover;
+}
+
+.str-video__participant-view__video--remote {
+  @apply w-full h-full object-cover;
+}
+
+/* Video container improvements */
+.str-video__participant-view__container {
+  @apply w-full h-full;
+}
+
+.str-video__participant-view__container--local {
+  @apply w-full h-full;
+}
+
+.str-video__participant-view__container--remote {
+  @apply w-full h-full;
+}
+
+/* Full screen video improvements */
+.str-video__participant-view--full-screen {
+  @apply w-full h-full;
+}
+
+.str-video__participant-view--full-screen .str-video__participant-view__video {
+  @apply w-full h-full object-cover;
+}
+
+/* Mobile specific video improvements */
+@media (max-width: 640px) {
+  .str-video__speaker-layout__wrapper {
+    @apply w-full h-full;
+  }
+  
+  .str-video__grid-layout {
+    @apply w-full h-full;
+  }
+  
+  .str-video__paginated-grid-layout {
+    @apply w-full h-full;
+  }
+  
+  .str-video__participant-view {
+    @apply w-full h-full;
+  }
+  
+  .str-video__participant-view__video {
+    @apply w-full h-full object-cover;
+  }
+  
+  .str-video__call-controls {
+    @apply gap-1 p-2;
+  }
+  
+  .str-video__call-controls__button {
+    @apply min-w-[36px] h-[36px] p-2;
+  }
+  
+  /* Mobile grid improvements */
+  .str-video__grid-layout__participant {
+    @apply w-full h-full min-h-[200px];
+  }
+  
+  .str-video__paginated-grid-layout__participant {
+    @apply w-full h-full min-h-[200px];
+  }
+  
+
+}
+
+
+
+
+
+/* Avatar improvements for mobile */
+.avatar-stack {
+  @apply flex items-center justify-center;
+}
+
+.avatar-stack img {
+  @apply border-2 border-white shadow-sm;
+}
+
+/* Meeting card improvements for mobile */
+.meeting-card {
+  @apply flex flex-col justify-between;
+}
+
+.meeting-card__content {
+  @apply flex flex-col gap-3 sm:gap-5;
+}
+
+.meeting-card__actions {
+  @apply flex flex-col sm:flex-row gap-2 sm:gap-5;
+}
+
+.meeting-card__members {
+  @apply w-full flex justify-center;
+}
+
+/* Responsive text improvements */
+.text-responsive {
+  @apply text-sm sm:text-base;
+}
+
+.text-responsive-lg {
+  @apply text-base sm:text-lg;
+}
+
+.text-responsive-xl {
+  @apply text-lg sm:text-xl;
+}
+
+.text-responsive-2xl {
+  @apply text-xl sm:text-2xl;
+}
+
 .show-block {
   display: block;
   animation: show 0.3s ease-in-out;
@@ -201,5 +436,16 @@ body {
   to {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+/* PWA specific styles */
+@media (display-mode: standalone) {
+  body {
+    @apply overscroll-none;
+  }
+  
+  .str-video__call-controls {
+    @apply pb-4;
   }
 }

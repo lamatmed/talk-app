@@ -31,6 +31,8 @@ const MeetingRoom = () => {
             return <PaginatedGridLayout />;
           case 'speaker-right':
             return <SpeakerLayout participantsBarPosition="left" />;
+          case 'speaker-left':
+            return <SpeakerLayout participantsBarPosition="right" />;
           default:
             return <SpeakerLayout participantsBarPosition="right" />;
         }
@@ -38,10 +40,9 @@ const MeetingRoom = () => {
 
       return (
         <section className="relative h-screen w-full overflow-hidden pt-4 text-white">
-
             <Button className='ml-2 sm:ml-5 font-semibold bg-gray-900 hover:scale-110 rounded-3xl text-xs sm:text-base px-3 sm:px-4 py-2'
                 onClick={() => {
-                    const meetingLink = `${process.env.NEXT_PUBLIC_BASE_URL}${pathname}`
+                    const meetingLink = `https://talk-app-two.vercel.app${pathname}`
                     navigator.clipboard.writeText(meetingLink);
                     toast('Lien de réunion copié',{ 
                     duration: 3000,
@@ -52,9 +53,8 @@ const MeetingRoom = () => {
                     Inviter des Personnes
             </Button>
 
-
-            <div className="relative flex size-full items-center justify-center">
-                <div className=" flex size-full max-w-[1000px] items-center animate-fade-in">
+            <div className="relative flex size-full items-center justify-center px-2 sm:px-4">
+                <div className="flex size-full max-w-[100vw] items-center animate-fade-in">
                 <CallLayout/>
                 </div>
                 <div
@@ -66,8 +66,8 @@ const MeetingRoom = () => {
                 </div>
             </div>
 
-            {/* call controls */}
-            <div className="fixed bottom-0 flex w-full items-center justify-center gap-2 sm:gap-5 p-2 sm:p-4">
+            {/* call controls - Improved mobile responsive */}
+            <div className="fixed bottom-0 left-0 right-0 flex items-center justify-center gap-1 sm:gap-2 lg:gap-5 p-2 sm:p-4 bg-black bg-opacity-50 backdrop-blur-sm">
                 <CallControls onLeave={() => router.push(`/`)} />
 
                 <DropdownMenu>

@@ -58,11 +58,16 @@ const CallList = ({ type }: { type: 'ended' | 'upcoming' | 'recordings' }) => {
     if (calls && calls.length > 0) return (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 xl:gap-5 px-4 sm:px-0">
           {
-            calls.map((meeting: Call | CallRecording) => { // Map over calls
+            calls.map((meeting: Call | CallRecording, index: number) => { // Map over calls
+              // Create unique key based on type
+              const uniqueKey = type === 'recordings' 
+                ? `recording-${index}-${(meeting as CallRecording).filename || Date.now()}`
+                : `call-${(meeting as Call).id || index}`;
+              
               return (
                 <MeetingCard
                   call={meeting as Call} // Cast meeting as Call
-                  key={(meeting as Call).id} // Use call ID as key
+                  key={uniqueKey} // Use unique key
                   type={type} // Pass type prop
                   icon={
                     type === 'ended'
@@ -84,7 +89,7 @@ const CallList = ({ type }: { type: 'ended' | 'upcoming' | 'recordings' }) => {
                   link={
                     type === 'recordings'
                       ? (meeting as CallRecording).url // Use recording URL if type is recordings
-                      : `${process.env.NEXT_PUBLIC_BASE_URL}/meeting/${(meeting as Call).id}` // Construct meeting URL
+                      : `https://talk-app-two.vercel.app/meeting/${(meeting as Call).id}` // Construct meeting URL
                   }
                   buttonIcon1={type === 'recordings' ? '/assets/play.svg' : undefined} // Use play icon for recordings
                   buttonText={type === 'recordings' ? 'Lire' : 'Démarrer'} // Use 'Lire' for recordings, 'Démarrer' otherwise

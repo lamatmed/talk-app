@@ -59,21 +59,23 @@ const MeetingSetup = ({
         return(
             <div className="flex h-screen w-full flex-col items-center justify-center gap-3 text-black px-4 sm:px-0">
             <h1 className="text-center text-xl sm:text-2xl font-bold">Configuration de la Réunion</h1>
-              <VideoPreview />
-            <div className="flex flex-col sm:flex-row h-auto sm:h-16 items-center justify-center gap-3">
+              <div className="w-full max-w-md">
+                <VideoPreview />
+              </div>
+            <div className="flex flex-col sm:flex-row h-auto sm:h-16 items-center justify-center gap-3 w-full max-w-md">
               <label className="flex items-center justify-center gap-2 font-medium text-sm sm:text-base">
                 <input
                   type="checkbox"
                   checked={isMicCamToggled}
                   onChange={(e) => setIsMicCamToggled(e.target.checked)}
                 />
-                Rejoindre avec micro et caméra désactivés
+                <span className="text-xs sm:text-sm">Rejoindre avec micro et caméra désactivés</span>
               </label>
               <DeviceSettings />
               
             </div>
             <Button
-              className="rounded-3xl bg-blue-500 p-4 sm:p-6 hover:bg-blue-800 hover:scale-125 transition ease-in-out delay-150 duration-300 text-sm sm:text-base"
+              className="rounded-3xl bg-blue-500 p-4 sm:p-6 hover:bg-blue-800 hover:scale-125 transition ease-in-out delay-150 duration-300 text-sm sm:text-base w-full max-w-md"
               onClick={() => {
                 call.join();
                 call.updateCallMembers({

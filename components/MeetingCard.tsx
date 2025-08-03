@@ -38,31 +38,31 @@ const MeetingCard = ({
 
   return (
     // Main container for the card with styling
-    <section className="flex min-h-[200px] sm:min-h-[258px] w-full flex-col justify-between rounded-3xl bg-blue-200 px-3 sm:px-5 py-6 sm:py-8 xl:max-w-[568px] text-black scale-90 shadow-2xl">
-      <article className="flex flex-col gap-3 sm:gap-5">
+    <section className="flex min-h-[200px] sm:min-h-[258px] w-full flex-col justify-between rounded-3xl bg-blue-200 px-3 sm:px-5 py-6 sm:py-8 xl:max-w-[568px] text-black scale-90 shadow-2xl meeting-card">
+      <article className="flex flex-col gap-3 sm:gap-5 meeting-card__content">
         {/* Display meeting icon */}
         <Image src={icon} alt="à venir" width={24} height={24} className="sm:w-7 sm:h-7" />
         <div className="flex justify-between">
           <div className="flex flex-col gap-1 sm:gap-2">
             {/* Meeting title and date */}
-            <h1 className="text-lg sm:text-2xl font-bold">{title}</h1>
-            <p className="text-sm sm:text-base font-normal">{date}</p>
+            <h1 className="text-responsive-xl font-bold">{title}</h1>
+            <p className="text-responsive font-normal">{date}</p>
           </div>
         </div>
       </article>
       
       {/* Section for meeting members and action buttons */}
       <article className={cn("flex justify-center relative flex-col gap-2 sm:gap-3", {})}>
-        <div>
+        <div className="w-full meeting-card__members">
           {/* Show meeting members only if the meeting has ended */}
           {type === 'ended' && <Members call={call}/>} 
         </div>
         
         {/* Show action buttons only if it's an active meeting */}
         {!isPreviousMeeting && (
-          <div className="flex flex-col sm:flex-row gap-2 sm:gap-5">
+          <div className="flex flex-col sm:flex-row gap-2 sm:gap-5 meeting-card__actions">
             {/* Button to join or start a meeting */}
-            <Button onClick={handleClick} className="rounded bg-blue-700 p-3 sm:p-4 hover:bg-blue-400 px-4 sm:px-6 text-sm sm:text-base">
+            <Button onClick={handleClick} className="rounded bg-blue-700 p-3 sm:p-4 hover:bg-blue-400 px-4 sm:px-6 text-responsive">
               {buttonIcon1 && (
                 <Image src={buttonIcon1} alt="fonctionnalité" width={16} height={16} className="sm:w-5 sm:h-5" />
               )}
@@ -71,7 +71,7 @@ const MeetingCard = ({
             
             {/* Button to copy meeting link */}
             <Button
-              className="bg-gray-700 text-sm sm:text-base p-3 sm:p-4"
+              className="bg-gray-700 text-responsive p-3 sm:p-4"
               onClick={() => {
                 navigator.clipboard.writeText(link); // Copy link to clipboard
                 toast("Lien copié",{

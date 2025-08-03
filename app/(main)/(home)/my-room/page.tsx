@@ -50,7 +50,7 @@ const MyRoomPage = () => {
   };
 
   // Generate the invite link for the meeting
-  const meetingLink = `${process.env.NEXT_PUBLIC_BASE_URL}/meeting/${meetingId}`;
+  const meetingLink = `https://talk-app-two.vercel.app/meeting/${meetingId}`;
 
   return (
     // Page layout container
